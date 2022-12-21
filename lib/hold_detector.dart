@@ -70,11 +70,6 @@ class HoldDetector extends StatelessWidget {
       behavior: this.behavior,
       excludeFromSemantics: this.excludeFromSemantics,
       gestures: {
-        TapGestureRecognizer:
-            GestureRecognizerFactoryWithHandlers<TapGestureRecognizer>(
-          () => TapGestureRecognizer(debugOwner: this),
-          (instance) => instance..onTap = this.onTap ?? this.onHold,
-        ),
         HoldGestureRecognizer:
             GestureRecognizerFactoryWithHandlers<HoldGestureRecognizer>(
           () => HoldGestureRecognizer(
